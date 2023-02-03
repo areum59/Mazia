@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mazia 위시리스트</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/library/selectric.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/contents.css">
+    <link rel="stylesheet" href="../../css/popup.css">
+
+
+    <!-- fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/20d055f060.js" crossorigin="anonymous"></script>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <div data-include-path="../../views/layout/header.html"></div>
+
+        <!-- contents -->
+        <section class="contents">
+            <!-- page location -->
+            <div class="location">
+                <ul>
+                    <li><a href="../../views/main/index.html">HOME</a></li>
+                    <li>위시리스트</li>
+                </ul>
+
+                <h2 class="page-tit">위시리스트</h2>
+
+                <div class="wish-wrap">
+                    <form action="#" name="" id="">
+                        <div class="wish-items">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 110px;">
+                                    <col>
+                                    <col style="width: 200px;">
+                                    <col style="width: 200px;">
+                                    <col style="width: 200px;">
+                                </colgroup>
+                        
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">상품정보</th>
+                                        <th>수량</th>
+                                        <th>가격</th>
+                                        <th>선택</th>
+                                    </tr>
+                                </thead>
+                        
+                                <tbody>
+                                    <tr>
+                                        <!-- 상품컷 -->
+                                        <td>
+                                            <div class="thumbnail">
+                                                <img src="../../img/main/main-890-948.jpg" alt="">
+                                            </div>
+                                        </td>
+                        
+                                        <!-- 상품명 + 옵션 -->
+                                        <td class="prod-name">
+                                            <a href="../prod-details/view.html">
+                                                하치코 기모 오픈카라 라벨 맨투맨
+                                            </a>
+                        
+                                            <ol class="opt-info">
+                                                <!-- 색상 -->
+                                                <li>색상 :</li>
+                                                <li>블랙</li>
+                                                <!-- 사이즈 -->
+                                                <li>사이즈 :</li>
+                                                <li>55~66</li>
+                                            </ol>
+                                        </td>
+                        
+                                        <!-- 수량 -->
+                                        <td class="qty">
+                                            <div class="qty-opt">
+                                                <a href="javascript:void(0);" class="minus" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></a>
+                                                <input min="1" class="qty" value="1" type="number">
+                                                <a href="javascript:void(0);" class="plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></a>
+                                            </div>
+                                        </td>
+                        
+                                        <!-- 가격 -->
+                                        <td class="price">90,000원</td>
+                        
+                                        <td>
+                                            <button type="button" class="btn red-hover-btn">장바구니 담기</button>
+                                            <a href="javascript:void(0);" class="btn black-hover-btn">삭제</a>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 보관한 상품이 없을경우 display: block -->
+                                    <tr class="nodata" style="display: none;">
+                                        <td colspan="6">
+                                            보관하신 상품 내역이 없습니다.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- button : 리스트 전체 삭제 -->
+                            <a href="javascript:void(0);" class="delete-all-btn">전체 삭제</a>
+                        </div>
+
+                        <!-- pagination -->
+                        <div class="paging">
+                            <ul>
+                                <!--Prev-->
+                                <li class="prev">이전</li>
+    
+                                <li class="index current">1</li>
+                                <li class="index">2</li>
+                                <li class="index">3</li>
+                                <li class="index">4</li>
+                                <li class="index">5</li>
+                                
+                                <!--Next-->
+                                <li class="next">다음</li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <div data-include-path="../../views/layout/footer.html"></div>
+    </div>
+
+    <!-- JS -->
+    <script src="../../js/common.js"></script>
+
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        }); //includeHTML
+    </script>
+</body>
+</html>

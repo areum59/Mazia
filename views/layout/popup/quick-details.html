@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mazia 상품정보 팝업</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../css/popup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- contents -->
+        <section class="contents">
+            <div class="detail">
+                <!-- 상품 이미지 미리보기 -->
+                <div class="frame-wrap">
+                    <!-- 상품 대표 이미지 -->
+                    <div id="cup" class="big-frame">
+                        <img src="../../img/main/main-890-948.jpg" alt="" class="big">
+                    </div>
+
+                    <ul class="small-frame">
+                        <li>
+                            <img src="../../img/main/main-890-948(hover).jpg" alt="" class="small">
+                        </li>
+                        <li>
+                            <img src="../../img/main/main-890-948.jpg" alt="" class="small">
+                        </li>
+                        <li>
+                            <img src="../../img/main/main-890-948(hover).jpg" alt="" class="small">
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- 상품 설명 -->
+                <div class="otp-wrap">
+                    <h2 class="prod-title">
+                        Elegant wooden leg design Replica
+                    </h2>
+    
+                    <div class="txt-box">
+                        <!-- 가격 -->
+                        <h5 class="price">$58.00</h5>
+    
+                        <!-- 상품 설명 -->
+                        <p>
+                            Typi non habent claritatem insitam, est usus legentis in iis qui facit eorum
+                            claritatem. Investigationes demonstraverunt lectores legere me lius quod ii
+                            legunt saepius. Claritas est etiam processus A Capitalize on low hanging fruit
+                            to identify a ballpark value added activity to beta test. Override the digital
+                            divide with additional clickthroughs from DevOps […]
+                        </p>
+    
+                        <!-- 체크 포인트 -->
+                        <ul>
+                            <li>Light green crewneck sweatshirt.</li>
+                            <li>Hand pockets.</li>
+                            <li>Relaxed fit.</li>
+                        </ul>
+                    </div>
+    
+                    <!-- 상품 옵션 선택 및 주문 -->
+                    <form action="" name="" id="">
+                        <!-- 색상 옵션 -->
+                        <div class="opt">
+                            <h6>Color : <span class="color-value">Gold</span></h6>
+    
+                            <ul class="color-opt">
+                                <li class="custom-radio">
+                                    <input type="radio" name="color" id="gold" checked>
+                                    <label for="gold" style="background-color: #FFD700;"></label>
+                                    <span>Gold</span>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" name="color" id="blue">
+                                    <label for="blue" style="background-color: #1E73BE;"></label>
+                                    <span>Blue</span>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" name="color" id="red">
+                                    <label for="red" style="background-color: #DD3333;"></label>
+                                    <span>Red</span>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" name="color" id="white">
+                                    <label for="white" style="background-color: white;"></label>
+                                    <span>White</span>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" name="color" id="black">
+                                    <label for="black" style="background-color: black;"></label>
+                                    <span>Black</span>
+                                </li>
+                            </ul>
+                        </div>
+    
+                        <!-- 사이즈 옵션 -->
+                        <div class="opt">
+                            <h6>Size : <span class="size-value">3XL</span></h6>
+    
+                            <ul class="size-opt">
+                                <li class="custom-radio">
+                                    <input type="radio" name="size" id="s" checked>
+                                    <label for="s">S</label>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" name="size" id="m">
+                                    <label for="m">M</label>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" name="size" id="l">
+                                    <label for="l">L</label>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" name="size" id="xl">
+                                    <label for="xl">XL</label>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" name="size" id="2xl">
+                                    <label for="2xl">XXL</label>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" name="size" id="3xl">
+                                    <label for="3xl">3XL</label>
+                                </li>
+                            </ul>
+                        </div>
+    
+                        <div class="btn-group">
+                            <dl>
+                                <dt>수량</dt>
+                                <dd>
+                                    <div class="qty-opt">
+                                        <a href="javascript:void(0);" class="minus" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></a>
+                                        <input min="1" class="qty" value="1" type="number">
+                                        <a href="javascript:void(0);" class="plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></a>
+                                    </div>
+                                </dd>
+                                <dd>
+                                    <!-- 장바구니 담기 -->
+                                    <a href="#" class="btn generic-btn red-hover-btn">+add to cart</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 상품 이미지 미리보기
+        let bigPic = document.querySelector(".big");
+        let smallPics = document.querySelectorAll(".small");
+
+        for (var i = 0; i < smallPics.length; i++) {
+            smallPics[i].addEventListener("click", chagePic);
+        }
+        function chagePic() {
+            var newPic = this.src;
+            bigPic.setAttribute("src", newPic);
+        }
+    </script>
+</body>
+</html>

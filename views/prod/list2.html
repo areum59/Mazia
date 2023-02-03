@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 카테고리별 list</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../css/popup.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/contents.css">
+    <link rel="stylesheet" href="../../css/prod/style2.css">
+
+    <!-- library css -->
+    <link rel="stylesheet" href="../../assets/css/library/selectric.css">
+    <link rel="stylesheet" href="../../assets/css/library/colorbox.css">
+    <link rel="stylesheet" href="../../assets/css/library/colorbox.css">
+
+    <!-- fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/20d055f060.js" crossorigin="anonymous"></script>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery UI - v1.13.2 -->
+    <script src="../../assets/css/library/slick.css"></script>
+    <link rel="stylesheet" href="../../assets/css/library/jquery-ui.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <div data-include-path="../../views/layout/header.html"></div>
+
+        <!-- contents -->
+        <section class="contents">
+
+            <!-- page location -->
+            <div class="location">
+                <ul>
+                    <li><a href="../../views/main/index.html">HOME</a></li>
+                    <li>Men</li>
+                </ul>
+            </div>
+        
+            <!-- sub page  -->
+            <div class="shop-wrap">
+                <!-- 카테고리 list -->
+                <div class="prod-wrap">
+                    <form action="" name="" id="">
+                        <!-- 상단 필터 -->
+                        <div class="filter-head">
+                            <div class="filter-tabs">
+                                <!-- 게시물 미리보기 타입 선택 -->
+                                <ul>
+                                    <li rel="prod-grid-1" class="active">
+                                        <i class="fa-solid fa-border-all"></i>
+                                    </li>
+                                    <li rel="prod-grid-2">
+                                        <i class="fa-solid fa-list"></i>
+                                    </li>
+                                </ul>
+        
+                                <!-- 총 게시물  -->
+                                <p class="shown-item">
+                                    총 <span>17개</span>의 상품이 있습니다.
+                                </p>
+                            </div>
+        
+                            <!-- 정렬 -->
+                            <div class="sorting">
+                                <select>
+                                    <option value="">기본 정렬</option>
+                                    <option value="">최신순</option>
+                                    <option value="">인기 판매순</option>
+                                    <option value="">평점 높은순</option>
+                                    <option value="">낮은 가격순</option>
+                                    <option value="">높은 가격순</option>
+                                </select>
+                            </div>
+
+                            <!-- 검색 필터 -->
+                            <div class="filter">
+                                <!-- click : 위젯 팝업 open -->
+                                <div class="filter-widget-toggle">Filter</div>
+                                
+                                <!-- popup : 위젯 -->
+                                <div class="filter-popup">
+                                    <!-- 컬러선택 -->
+                                    <div class="widget-box">
+                                        <h3>Filter By Color</h3>
+                            
+                                        <form action="" name="" id="">
+                                            <ul class="color-list">
+                                                <li style="background-color: #000;"></li>
+                                                <li style="background-color: #C9C9C9;"></li>
+                                                <li style="background-color: #FFFFFF;"></li>
+                                                <li style="background-color: #521352;"></li>
+                                                <li style="background-color: #1E73BE;"></li>
+                                                <li style="background-color: #FFD700;"></li>
+                                                <li style="background-color: #FFFF00;"></li>
+                                                <li style="background-color: #008000;"></li>
+                                                <li style="background-color: #DD3333;"></li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                            
+                                    <!-- 사이즈 선택 -->
+                                    <div class="widget-box">
+                                        <h3>Filter By Size</h3>
+                            
+                                        <form action="" name="" id="">
+                                            <ul class="size-list">
+                                                <li>3xl</li>
+                                                <li>l</li>
+                                                <li>m</li>
+                                                <li>s</li>
+                                                <li>xl</li>
+                                                <li>xxl</li>
+                                            </ul>
+                                        </form>
+                                    </div>
+
+                                    <!-- 가격 범위 -->
+                                    <div class="widget-box">
+                                        <h3>Filter By Price</h3>
+                            
+                                        <form action="" name="" id="">
+                                            <div id="slider-range"></div>
+                            
+                                            <div class="btn-group">
+                                                <button type="submit" class="btn red-hover-btn">Filter</button>
+                            
+                                                <p>
+                                                    <label for="amount">가격 범위:</label>
+                                                    <input type="text" id="amount" readonly>
+                                                </p>
+                                            </div>
+                                        </form>
+                                    </div>
+                            
+                                    <!-- 인기태그 -->
+                                    <div class="popular-tags">
+                                        <h3>Popular Tags</h3>
+                            
+                                        <ul class="ctgy-list">
+                                            <li><a href="#">Accessories</a></li>
+                                            <li><a href="#">Clothing</a></li>
+                                            <li><a href="#">fashion</a></li>
+                                            <li><a href="#">Fly</a></li>
+                                            <li><a href="#">Glasses</a></li>
+                                            <li><a href="#">men</a></li>
+                                            <li><a href="#">Product</a></li>
+                                            <li><a href="#">version</a></li>
+                                            <li><a href="#">women</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- 상품 목록 -->
+                        <div id="prod-grid-1" class="prod-list grid-style">
+                            <ul class="prod-items">
+                                <li class="item-box">
+                                    <!-- 상품컷 -->
+                                    <div class="thumbnail">
+                                        <img src="../../img/main/main-890-948.jpg" alt="">
+        
+                                        <!-- 상품상세 페이지로 이동 -->
+                                        <a href="../../views/prod/list.html" class="second-thumbnail">
+                                            <img src="../../img/main/main-890-948(hover).jpg" alt="">
+                                        </a>
+        
+                                        <a href="javascript:void(0)" class="quick-view">Quick view</a>
+        
+                                        <!-- 세일관련 네임텍 -->
+                                        <div class="tags">
+                                            <span class="sale">SALE</span>
+                                            <span class="best">BEST</span>
+                                        </div>
+                                    </div>
+        
+                                    <!-- 상품 설명 -->
+                                    <div class="prod-desc">
+                                        <div class="desc-top">
+                                            <!-- 평점 -->
+                                            <div class="rating-point">
+                                                <span style="width: 30%"></span>
+                                            </div>
+        
+                                            <!-- 관심상품 아이콘 -->
+                                            <a href="wishlist.html" class="wishlist">
+                                                <i class="fa-regular fa-heart"></i></span>
+                                            </a>
+                                        </div>
+        
+                                        <h2 class="prod-title">
+                                            Light green crewneck sweatshir
+                                        </h2>
+        
+                                        <div class="price-switcher">
+                                            <!-- 상품가격 -->
+                                            <span class="switcher-item price">$58.00</span>
+                                            <!-- 장바구니 : 장바구니에 담은 뒤 이동 -->
+                                            <a href="cart.html" class="switcher-item add-cart">
+                                                +add to cart
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+        
+                                <li class="item-box">
+                                    <!-- 상품컷 -->
+                                    <div class="thumbnail">
+                                        <img src="../../img/main/main-890-948.jpg" alt="">
+        
+                                        <!-- 상품상세 페이지로 이동 -->
+                                        <a href="../../views/prod/list.html" class="second-thumbnail">
+                                            <img src="../../img/main/main-890-948(hover).jpg" alt="">
+                                        </a>
+        
+                                        <a href="javascript:void(0)" class="quick-view">Quick view</a>
+        
+                                        <!-- 세일관련 네임텍 -->
+                                        <div class="tags">
+                                            <span class="sale">SALE</span>
+                                            <span class="best">BEST</span>
+                                        </div>
+                                    </div>
+        
+                                    <!-- 상품 설명 -->
+                                    <div class="prod-desc">
+                                        <div class="desc-top">
+                                            <!-- 평점 -->
+                                            <div class="rating-point">
+                                                <span style="width: 60%"></span>
+                                            </div>
+        
+                                            <!-- 관심상품 아이콘 -->
+                                            <a href="wishlist.html" class="wishlist">
+                                                <i class="fa-regular fa-heart"></i></span>
+                                            </a>
+                                        </div>
+        
+                                        <h2 class="prod-title">
+                                            Light green crewneck sweatshir
+                                        </h2>
+        
+                                        <div class="price-switcher">
+                                            <!-- 상품가격 -->
+                                            <span class="switcher-item price">$58.00</span>
+                                            <!-- 장바구니 : 장바구니에 담은 뒤 이동 -->
+                                            <a href="cart.html" class="switcher-item add-cart">
+                                                +add to cart
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+        
+                                <li class="item-box">
+                                    <!-- 상품컷 -->
+                                    <div class="thumbnail">
+                                        <img src="../../img/main/main-890-948.jpg" alt="">
+        
+                                        <!-- 상품상세 페이지로 이동 -->
+                                        <a href="../../views/prod/list.html" class="second-thumbnail">
+                                            <img src="../../img/main/main-890-948(hover).jpg" alt="">
+                                        </a>
+        
+                                        <a href="javascript:void(0)" class="quick-view">Quick view</a>
+        
+                                        <!-- 세일관련 네임텍 -->
+                                        <div class="tags">
+                                            <span class="sale">SALE</span>
+                                            <span class="best">BEST</span>
+                                        </div>
+                                    </div>
+        
+                                    <!-- 상품 설명 -->
+                                    <div class="prod-desc">
+                                        <div class="desc-top">
+                                            <!-- 평점 -->
+                                            <div class="rating-point">
+                                                <span style="width: 100%"></span>
+                                            </div>
+        
+                                            <!-- 관심상품 아이콘 -->
+                                            <a href="wishlist.html" class="wishlist">
+                                                <i class="fa-regular fa-heart"></i></span>
+                                            </a>
+                                        </div>
+        
+                                        <h2 class="prod-title">
+                                            Light green crewneck sweatshir
+                                        </h2>
+        
+                                        <div class="price-switcher">
+                                            <!-- 상품가격 -->
+                                            <span class="switcher-item price">$58.00</span>
+                                            <!-- 장바구니 : 장바구니에 담은 뒤 이동 -->
+                                            <a href="cart.html" class="switcher-item add-cart">
+                                                +add to cart
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+        
+                                <li class="item-box">
+                                    <!-- 상품컷 -->
+                                    <div class="thumbnail">
+                                        <img src="../../img/main/main-890-948.jpg" alt="">
+        
+                                        <!-- 상품상세 페이지로 이동 -->
+                                        <a href="../../views/prod/list.html" class="second-thumbnail">
+                                            <img src="../../img/main/main-890-948(hover).jpg" alt="">
+                                        </a>
+        
+                                        <a href="javascript:void(0)" class="quick-view">Quick view</a>
+        
+                                        <!-- 세일관련 네임텍 -->
+                                        <div class="tags">
+                                            <span class="sale">SALE</span>
+                                            <span class="best">BEST</span>
+                                        </div>
+                                    </div>
+        
+                                    <!-- 상품 설명 -->
+                                    <div class="prod-desc">
+                                        <div class="desc-top">
+                                            <!-- 평점 -->
+                                            <div class="rating-point">
+                                                <span style="width: 50%"></span>
+                                            </div>
+        
+                                            <!-- 관심상품 아이콘 -->
+                                            <a href="wishlist.html" class="wishlist">
+                                                <i class="fa-regular fa-heart"></i></span>
+                                            </a>
+                                        </div>
+        
+                                        <h2 class="prod-title">
+                                            Light green crewneck sweatshir
+                                        </h2>
+        
+                                        <div class="price-switcher">
+                                            <!-- 상품가격 -->
+                                            <span class="switcher-item price">$58.00</span>
+                                            <!-- 장바구니 : 장바구니에 담은 뒤 이동 -->
+                                            <a href="cart.html" class="switcher-item add-cart">
+                                                +add to cart
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+        
+                                <li class="item-box">
+                                    <!-- 상품컷 -->
+                                    <div class="thumbnail">
+                                        <img src="../../img/main/main-890-948.jpg" alt="">
+        
+                                        <!-- 상품상세 페이지로 이동 -->
+                                        <a href="../../views/prod/list.html" class="second-thumbnail">
+                                            <img src="../../img/main/main-890-948(hover).jpg" alt="">
+                                        </a>
+        
+                                        <a href="javascript:void(0)" class="quick-view">Quick view</a>
+        
+                                        <!-- 세일관련 네임텍 -->
+                                        <div class="tags">
+                                            <span class="sale">SALE</span>
+                                            <span class="best">BEST</span>
+                                        </div>
+                                    </div>
+        
+                                    <!-- 상품 설명 -->
+                                    <div class="prod-desc">
+                                        <div class="desc-top">
+                                            <!-- 평점 -->
+                                            <div class="rating-point">
+                                                <span style="width: 80%"></span>
+                                            </div>
+        
+                                            <!-- 관심상품 아이콘 -->
+                                            <a href="wishlist.html" class="wishlist">
+                                                <i class="fa-regular fa-heart"></i></span>
+                                            </a>
+                                        </div>
+        
+                                        <h2 class="prod-title">
+                                            Light green crewneck sweatshir
+                                        </h2>
+        
+                                        <div class="price-switcher">
+                                            <!-- 상품가격 -->
+                                            <span class="switcher-item price">$58.00</span>
+                                            <!-- 장바구니 : 장바구니에 담은 뒤 이동 -->
+                                            <a href="cart.html" class="switcher-item add-cart">
+                                                +add to cart
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+        
+                        <div id="prod-grid-2" class="prod-list list-style">
+                            <ul class="prod-items">
+                                <li class="item-box">
+                                    <!-- 상품컷 -->
+                                    <div class="thumbnail">
+                                        <img src="../../img/main/main-890-948.jpg" alt="">
+        
+                                        <!-- 상품상세 페이지로 이동 -->
+                                        <a href="../../views/prod/list.html" class="second-thumbnail">
+                                            <img src="../../img/main/main-890-948(hover).jpg" alt="">
+                                        </a>
+        
+                                        <a href="javascript:void(0)" class="quick-view">Quick view</a>
+        
+                                        <!-- 세일관련 네임텍 -->
+                                        <div class="tags">
+                                            <span class="sale">SALE</span>
+                                            <span class="best">BEST</span>
+                                        </div>
+                                    </div>
+        
+                                    <!-- 상품 설명 -->
+                                    <div class="prod-desc">
+                                        <div class="desc-top">
+                                            <!-- 관심상품 아이콘 -->
+                                            <a href="#" class="prod-title">
+                                                Light green crewneck sweatshir
+                                            </a>
+        
+                                            <!-- 평점 -->
+                                            <div class="rating-point">
+                                                <span style="width: 90%"></span>
+                                            </div>
+                                        </div>
+        
+                                        <div class="desc-txtbox">
+                                            <!-- 가격 -->
+                                            <h5 class="price">$58.00</h5>
+        
+                                            <!-- 상품 설명 -->
+                                            <p>
+                                                Typi non habent claritatem insitam, est usus legentis in iis qui facit eorum
+                                                claritatem. Investigationes demonstraverunt lectores legere me lius quod ii
+                                                legunt saepius. Claritas est etiam processus A Capitalize on low hanging fruit
+                                                to identify a ballpark value added activity to beta test. Override the digital
+                                                divide with additional clickthroughs from DevOps […]
+                                            </p>
+        
+                                            <!-- 체크 포인트 -->
+                                            <ul>
+                                                <li>Light green crewneck sweatshirt.</li>
+                                                <li>Hand pockets.</li>
+                                                <li>Relaxed fit.</li>
+                                            </ul>
+                                        </div>
+        
+                                        <!-- button -->
+                                        <div class="btn-group">
+                                            <!-- 장바구니 담기 -->
+                                            <a href="#" class="btn generic-btn black-hover-btn">
+                                                +add to cart
+                                            </a>
+                                            <!-- 관심상품 등록 -->
+                                            <a href="#" class="btn generic-btn">
+                                                <i class="fa-regular fa-heart"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+        
+                                <li class="item-box">
+                                    <!-- 상품컷 -->
+                                    <div class="thumbnail">
+                                        <img src="../../img/main/main-890-948.jpg" alt="">
+        
+                                        <!-- 상품상세 페이지로 이동 -->
+                                        <a href="../../views/prod/list.html" class="second-thumbnail">
+                                            <img src="../../img/main/main-890-948(hover).jpg" alt="">
+                                        </a>
+        
+                                        <a href="javascript:void(0)" class="quick-view">Quick view</a>
+        
+                                        <!-- 세일관련 네임텍 -->
+                                        <div class="tags">
+                                            <span class="sale">SALE</span>
+                                            <span class="best">BEST</span>
+                                        </div>
+                                    </div>
+        
+                                    <!-- 상품 설명 -->
+                                    <div class="prod-desc">
+                                        <div class="desc-top">
+                                            <!-- 관심상품 아이콘 -->
+                                            <a href="#" class="prod-title">
+                                                Light green crewneck sweatshir
+                                            </a>
+        
+                                            <!-- 평점 -->
+                                            <div class="rating-point">
+                                                <span style="width: 50%"></span>
+                                            </div>
+                                        </div>
+        
+                                        <div class="desc-txtbox">
+                                            <!-- 가격 -->
+                                            <h5 class="price">$58.00</h5>
+        
+                                            <!-- 상품 설명 -->
+                                            <p>
+                                                Typi non habent claritatem insitam, est usus legentis in iis qui facit eorum
+                                                claritatem. Investigationes demonstraverunt lectores legere me lius quod ii
+                                                legunt saepius. Claritas est etiam processus A Capitalize on low hanging fruit
+                                                to identify a ballpark value added activity to beta test. Override the digital
+                                                divide with additional clickthroughs from DevOps […]
+                                            </p>
+        
+                                            <!-- 체크 포인트 -->
+                                            <ul>
+                                                <li>Light green crewneck sweatshirt.</li>
+                                                <li>Hand pockets.</li>
+                                                <li>Relaxed fit.</li>
+                                            </ul>
+                                        </div>
+        
+                                        <!-- button -->
+                                        <div class="btn-group">
+                                            <!-- 장바구니 담기 -->
+                                            <a href="#" class="btn generic-btn black-hover-btn">
+                                                +add to cart
+                                            </a>
+                                            <!-- 관심상품 등록 -->
+                                            <a href="#" class="btn generic-btn">
+                                                <i class="fa-regular fa-heart"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- pagination -->
+                        <div class="paging">
+                            <ul>
+                                <!--Prev-->
+                                <li class="prev">이전</li>
+    
+                                <li class="index current">1</li>
+                                <li class="index">2</li>
+                                <li class="index">3</li>
+                                <li class="index">4</li>
+                                <li class="index">5</li>
+                                
+                                <!--Next-->
+                                <li class="next">다음</li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- footer -->
+        <div data-include-path="../../views/layout/footer.html"></div>
+    </div>
+
+    <!-- JS -->
+    <script src="../../js/common.js"></script>
+    <script src="../../js/contents.js"></script>
+    <script src="../../js/popup.js"></script>
+
+    <!-- library -->
+    <script src="../../assets/js/library/jquery-selectric/jquery.selectric.min.js"></script>
+    <script src="../../assets/js/library/jquery-colorbox/jquery.colorbox-min.js"></script>
+    <script src="../../assets/js/library/jquery-colorbox/jquery.colorbox-min.js"></script>
+
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        }); //includeHTML
+    </script>
+</body>
+</html>

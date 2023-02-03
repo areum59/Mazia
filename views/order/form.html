@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mazia 주문/결제</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/library/selectric.css">
+    <link rel="stylesheet" href="../../css/popup.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/contents.css">
+
+    <!-- fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/20d055f060.js" crossorigin="anonymous"></script>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <div data-include-path="../../views/layout/header.html"></div>
+
+        <!-- contents -->
+        <section class="contents">
+            <!-- page location -->
+            <div class="location">
+                <ul>
+                    <li><a href="../../views/main/index.html">HOME</a></li>
+                    <li>주문하기</li>
+                </ul>
+            </div>
+
+            <h2 class="page-tit">주문/결제</h2>
+
+            <form action="" name="" id="">
+                <div class="order-wrap">
+                    <!-- 주문 목록 -->
+                    <div class="order-items">
+                        <table>
+                            <colgroup>
+                                <col style="width: 100px;">
+                                <col style="width: 380px;">
+                                <col>
+                                <col style="width: 80px;">
+                                <col>
+                            </colgroup>
+                        
+                            <thead>
+                                <tr>
+                                    <th colspan="2">상품명</th>
+                                    <th>가격</th>
+                                    <th>수량</th>
+                                    <th>주문금액</th>
+                                </tr>
+                            </thead>
+                        
+                            <tbody>
+                                <tr>
+                                    <!-- 상품컷 -->
+                                    <td>
+                                        <div class="thumbnail">
+                                            <img src="../../img/main/main-890-948.jpg" alt="">
+                                        </div>
+                                    </td>
+                        
+                                    <!-- 상품명 + 옵션 -->
+                                    <td class="prod-name">
+                                        <a href="../prod-details/view.html">
+                                            하치코 기모 오픈카라 라벨 맨투맨
+                                        </a>
+
+                                        <ol class="opt-info">
+                                            <!-- 색상 -->
+                                            <li>색상 :</li>
+                                            <li>레드</li>
+                                            <!-- 사이즈 -->
+                                            <li>사이즈 :</li>
+                                            <li>55~66</li>
+                                            <!-- 선택 수량 -->
+                                            <li>1개</li>
+                                        </ol>
+                                    </td>
+                        
+                                    <!-- 가격 -->
+                                    <td class="price">90,000원</td>
+                        
+                                    <!-- 수량 -->
+                                    <td class="qty">1개</td>
+                        
+                                    <!-- 주문금액 -->
+                                    <td class="order-price">90,000원</td>
+                                </tr>
+
+                                <tr>
+                                    <!-- 상품컷 -->
+                                    <td>
+                                        <div class="thumbnail">
+                                            <img src="../../img/main/main-890-948.jpg" alt="">
+                                        </div>
+                                    </td>
+                        
+                                    <!-- 상품명 + 옵션 -->
+                                    <td class="prod-name">
+                                        <a href="../prod-details/view.html">
+                                            하치코 기모 오픈카라 라벨 맨투맨
+                                        </a>
+
+                                        <ol class="opt-info">
+                                            <!-- 색상 -->
+                                            <li>색상 :</li>
+                                            <li>블랙</li>
+                                            <!-- 사이즈 -->
+                                            <li>사이즈 :</li>
+                                            <li>55~66</li>
+                                            <!-- 선택 수량 -->
+                                            <li>1개</li>
+                                        </ol>
+                                    </td>
+                        
+                                    <!-- 가격 -->
+                                    <td class="price">90,000원</td>
+                        
+                                    <!-- 수량 -->
+                                    <td class="qty">1개</td>
+                        
+                                    <!-- 주문금액 -->
+                                    <td class="order-price">90,000원</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 배송지 정보 -->
+                    <div class="devy-info">
+                        <h3 class="order-tit">배송지 정보</h3>
+
+                        <ul class="group">
+                            <li>
+                                <label for="orderName">받는분 <span class="required"></span></label>
+                                <input type="text" name="" id="orderName">
+                            </li>
+                            
+                            <li>
+                                <div class="input-set">
+                                    <label for="orderPhone">휴대전화 <span class="required"></span></label>
+                                    <input type="number" name="orderPhone" id="orderPhone">
+                                </div>
+                            
+                                <div class="input-set">
+                                    <label for="orderTel">일반전화</label>
+                                    <input type="number" name="orderTel" id="orderTel">
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <label for="orderEmail">이메일</label>
+                                <input type="text" name="" id="orderEmail" value="samle@gmail.com">
+                            </li>
+                            
+                            <li>
+                                <label for="orderAddress">주소 <span class="required"></span></label>
+
+                                <div class="post-code">
+                                    <input type="text" name="orderAddress" id="postCode" placeholder="우편번호" disabled>
+                                    <button type="button">우편번호 찾기</button>
+                                </div>
+                            
+                                <input type="text" name="orderAddress" id="Addr" placeholder="기본주소" disabled>
+                                <input type="text" name="orderAddress" id="AddrDtl" placeholder="상세주소">
+                            </li>
+                        </ul>
+
+                        <!-- 다른 배송지 입력 -->
+                        <div class="shipping">
+                            <input type="checkbox" name="" id="shipBox" class="basic-chkbox">
+                            <label for="shipBox" class="basic-chkbox-label">다른 주소로 배송하시겠습니까?</label>
+
+                            <ul id="newShipping" class="group">
+                                <li>
+                                    <label for="orderName">받는분 <span class="required"></span></label>
+                                    <input type="text" name="" id="orderName">
+                                </li>
+                                
+                                <li>
+                                    <div class="input-set">
+                                        <label for="orderPhone">휴대전화 <span class="required"></span></label>
+                                        <input type="number" name="orderPhone" id="orderPhone">
+                                    </div>
+                                
+                                    <div class="input-set">
+                                        <label for="orderTel">일반전화</label>
+                                        <input type="number" name="orderTel" id="orderTel">
+                                    </div>
+                                </li>
+                                
+                                <li>
+                                    <label for="orderEmail">이메일</label>
+                                    <input type="text" name="" id="orderEmail" value="samle@gmail.com">
+                                </li>
+                                
+                                <li>
+                                    <label for="orderAddress">주소 <span class="required"></span></label>
+    
+                                    <div class="post-code">
+                                        <input type="text" name="orderAddress" id="postCode" placeholder="우편번호" disabled>
+                                        <button type="button">우편번호 찾기</button>
+                                    </div>
+                                
+                                    <input type="text" name="orderAddress" id="Addr" placeholder="기본주소" disabled>
+                                    <input type="text" name="orderAddress" id="AddrDtl" placeholder="상세주소">
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 배송 요청사항 -->
+                        <div class="group devy-msg">
+                            <label for="devyMsg">배송 요청사항</label>
+                            <input type="text" name="" id="devyMsg" placeholder="배송 요청 사항을 입력해 주세요.">
+                        </div>
+                    </div>
+
+                    <!-- 결제 정보 -->
+                    <div class="order-info">
+                        <!-- 주문금액 안내 -->
+                        <div class="order-price">
+                            <h3>주문</h3>
+                        
+                            <dl>
+                                <dt>상품금액</dt>
+                                <dd class="amount">
+                                    <strong>145,060</strong>원
+                                </dd>
+                            
+                                <dt>할인금액</dt>
+                                <dd class="amount">
+                                    <strong>0</strong>원
+                                </dd>
+                                <dt>배송비</dt>
+                                <dd class="amount">
+                                    <strong>3,000</strong>원
+                                </dd>
+                            </dl>
+
+                            <dl class="total-sum">
+                                <dt>총 결제금액</dt>
+                                <dd class="amount">
+                                    <strong>145,060</strong>원
+                                </dd>
+                            </dl>
+                        </div>
+
+                        <!-- 쿠폰 및 포인트 사용 -->
+                        <div class="disc-info">
+                            <h3>쿠폰/포인트 사용</h3>
+
+                            <dl>
+                                <dt>포인트 사용</dt>
+                                <dd>
+                                    <input type="text" name="" id="" placeholder="1,000포인트부터 사용 가능">
+                                    <button type="button">전액사용</button>
+                                    <span>사용 가능한 포인트 : <strong>2,000</strong>P</span>
+                                </dd>
+
+                                <dt>쿠폰 사용</dt>
+                                <dd>
+                                    <input type="text" name="" id="" disabled>
+                                    <button type="button">쿠폰선택</button>
+                                    <span>사용 가능한 쿠폰 : <strong>0</strong>개</span>
+                                </dd>
+                            </dl>
+                        </div>
+
+                        <!-- 결제방법 선택 -->
+                        <div class="payment-method">
+                            <h3>결제방법</h3>
+
+                            <!-- 결제방식 선택(accrdion) -->
+                            <div class="accordion-wrap">
+                                <!-- 카드결제 선택 -->
+                                <div class="payment-tit accordion-title">
+                                    카드결제
+                                </div>
+                                <div class="payment-detail panel">
+                                    <dl>
+                                        <dt>카드선택</dt>
+                                        <dd>
+                                            <div class="sel-group">
+                                                <select>
+                                                    <option value="" selected>카드사를 선택하세요.</option>
+                                                    <option value="">KB국민카드</option>
+                                                    <option value="">신한카드</option>
+                                                    <option value="">현대카드</option>
+                                                    <option value="">삼성카드</option>
+                                                    <option value="">우리카드</option>
+                                                    <option value="">롯데카드</option>
+                                                    <option value="">NH농협카드</option>
+                                                    <option value="">비씨카드</option>
+                                                    <option value="">씨티카드</option>
+                                                    <option value="">카카오뱅크</option>
+                                                </select>
+                                            </div>
+                                        </dd>
+
+                                        <dt>할부선택</dt>
+                                        <dd>
+                                            <div class="sel-group">
+                                                <select>
+                                                    <option value="" selected>일시불</option>
+                                                    <option value="">2개월</option>
+                                                    <option value="">3개월</option>
+                                                    <option value="">4개월</option>
+                                                    <option value="">5개월</option>
+                                                    <option value="">6개월</option>
+                                                </select>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+
+                                <!-- 무통장 입금 선택 -->
+                                <div class="payment-tit accordion-title">
+                                    무통장 입금
+                                </div>
+                                <div class="payment-detail panel">
+                                    <dl>
+                                        <!-- 은행명 -->
+                                        <dt>입금은행</dt>
+                                        <dd>
+                                            <div class="sel-group">
+                                                <select>
+                                                    <option value="" selected>입금은행을 선택하세요.</option>
+                                                    <option value="">기업은행</option>
+                                                    <option value="">국민은행</option>
+                                                    <option value="">농협은행</option>
+                                                    <option value="">SC제일은행</option>
+                                                    <option value="">우리은행</option>
+                                                    <option value="">하나은행</option>
+                                                    <option value="">신한은행</option>
+                                                    <option value="">우체국</option>
+                                                </select>
+                                            </div>
+                                        </dd>
+                                    
+                                        <!-- 입금자명 -->
+                                        <dt>입금자명</dt>
+                                        <dd>
+                                            <input type="text" name="" id="" placeholder="입금자명">
+                                        </dd>
+                                    <!-- 현급영수증 발행여부 -->
+                                        <dt>현금영수증</dt>
+                                        <dd>
+                                            <div>
+                                                <input type="radio" name="IsReqCashInv" id="yes" class="basic-radio">
+                                                <label for="yes" class="basic-radio-label">발급신청</label>
+
+                                                <input type="radio" name="IsReqCashInv" id="no" class="basic-radio" checked>
+                                                <label for="no" class="basic-radio-label">신청안함</label>
+                                            </div>
+                                        </dd>
+                                    </dl>
+
+                                    <div class="guide-txt">
+                                        <ol>
+                                            <li>7일 이내 미 입금 시, 주문이 자동 취소됩니다.</li>
+                                            <li>발급된 계좌에 입금자명과 금액을 정확하게 입금해주세요.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                                <!-- 간편결제 선택 -->
+                                <div class="payment-tit accordion-title">
+                                    간편결제
+                                </div>
+                                <div class="payment-detail panel">
+                                    <ul class="easy-payment">
+                                        <li class="custom-radio">
+                                            <input type="radio" name="payType" id="kakaoPay">
+                                            <label for="kakaoPay" class="kakaopay">카카오페이</label>
+                                        </li>
+                                        <li class="custom-radio">
+                                            <input type="radio" name="payType" id="Npay">
+                                            <label for="Npay" class="napay">네이버페이</label>
+                                        </li>
+                                        <li class="custom-radio">
+                                            <input type="radio" name="payType" id="Payco">
+                                            <label for="Payco" class="payco">페이코</label>
+                                        </li>
+                                        <li class="custom-radio">
+                                            <input type="radio" name="payType" id="tossPay">
+                                            <label for="tossPay" class="toss">토스페이</label>
+                                        </li>
+                                        <li class="custom-radio">
+                                            <input type="radio" name="payType" id="smilePay">
+                                            <label for="smilePay" class="smile">스마일페이</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="btn-group">
+                                <button type="button" class="btn red-hover-btn">주문하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- footer -->
+        <div data-include-path="../../views/layout/footer.html"></div>
+    </div>
+
+    <!-- JS -->
+    <script src="../../js/common.js"></script>
+    <script src="../../js/contents.js"></script>
+
+    <!-- library -->
+    <script src="../../assets/js/library/jquery-selectric/jquery.selectric.min.js"></script>
+
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        }); //includeHTML
+    </script>
+</body>
+</html>

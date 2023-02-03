@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mazia login</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../css/popup.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/contents.css">
+
+    <!-- fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/20d055f060.js" crossorigin="anonymous"></script>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <div data-include-path="../../views/layout/header.html"></div>
+
+        <!-- contents -->
+        <section class="contents">
+
+            <!-- page location -->
+            <div class="location">
+                <ul>
+                    <li><a href="../../views/main/index.html">HOME</a></li>
+                    <li>Login</li>
+                </ul>
+            </div>
+
+            <div class="login-area">
+                <h2>Login</h2>
+
+                <!-- 로그인 form -->
+                <form action="#" name="" id="">
+                    <!-- 아이디, 비밀번호 입력 -->
+                    <div class="input-group">
+                        <label for="userId">ID or Email Address <span>*</span></label>
+                        <input type="text" name="login" id="userId" placeholder="아이디 또는 이메일을 입력해주세요.">
+                        
+                        <label for="userPw">Password <span>*</span></label>
+                        <input type="password" name="login" id="userPw" placeholder="비밀번호를 입력해주세요.">
+                    </div>
+
+                    <ul class="chk-group">
+                        <!-- 아이디 저장 -->
+                        <li>
+                            <input type="checkbox" name="remember" id="rememberId" class="basic-chkbox">
+                            <label for="rememberId" class="basic-chkbox-label">아이디 저장</label>
+                        </li>
+                        <!-- 아이디, 비밀번호 찾기 -->
+                        <li class="find-btns">
+                            <a href="#">아이디 찾기</a>
+                            <span>|</span>
+                            <a href="#">비밀번호 찾기</a>
+                        </li>
+                    </ul>
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn red-hover-btn">로그인</button>
+                        <div class="divide"><span>or</span></div>
+                        <button type="button" class="btn black-hover-btn" onclick="location.href='#'">회원가입</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+        <!-- footer -->
+        <div data-include-path="../../views/layout/footer.html"></div>
+    </div>
+
+    <!-- JS -->
+    <script src="../../js/common.js"></script>
+
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        }); //includeHTML
+    </script>
+</body>
+</html>
